@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology to My Best Friend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e8ff;
+            color: #4b0082;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #8e44ad;
+        }
+        .moving-button {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function moveButton(event) {
+            const button = event.target;
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function goToPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div id="page1" class="page container">
+        <h1>I’m really sorry for constantly hurting you</h1>
+        <button onclick="goToPage('page2')">Pls press me🥹</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page container" style="display: none;">
+        <h1>Can I make it up to you?</h1>
+        <button onclick="goToPage('page3')">Yes</button>
+        <button class="moving-button" onmouseover="moveButton(event)" style="display: inline-block;">No</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="page container" style="display: none;">
+        <h1>Make it up to me by:</h1>
+        <button onclick="goToPage('divineIceCream')">Divine Ice Cream</button>
+        <button onclick="goToPage('brownies')">Brownies</button>
+        <button onclick="goToPage('yourChoice')">Your Choice</button>
+    </div>
+
+    <!-- Divine Ice Cream Page -->
+    <div id="divineIceCream" class="page container" style="display: none;">
+        <h1>I will make it up to you by getting you a variety of Divine Ice Cream flavors 🍨💗</h1>
+        <button onclick="goToPage('finalMessage')">Select me pls</button>
+    </div>
+
+    <!-- Brownies Page -->
+    <div id="brownies" class="page container" style="display: none;">
+        <h1>I will get you brownies from the one n only, Alawiya's Blissful Bites 🍰🤎</h1>
+        <button onclick="goToPage('finalMessage')">Select me pls</button>
+    </div>
+
+    <!-- Your Choice Page -->
+    <div id="yourChoice" class="page container" style="display: none;">
+        <h1>Aaaww this is a great opportunity for me, I'll get you both brownies and ice cream💗🥰</h1>
+        <button onclick="goToPage('finalMessage')">Select me pls</button>
+    </div>
+
+    <!-- Final Message Page -->
+    <div id="finalMessage" class="page container" style="display: none;">
+        <h1>I’m really sorry for the hurtful words I said🥹 You mean the world to me, and I hate knowing I hurt you. I promise to do better because you deserve the best of me my loveee. Thank you for being my everything🥹💗 Your smile is my favorite thing, and I hope this brings your smile back. Did it bring your precious smile back?</h1>
+        <button onclick="goToPage('smilePage')">Yes</button>
+        <button onclick="goToPage('forgivePage')">No</button>
+    </div>
+
+    <!-- Smile Page -->
+    <div id="smilePage" class="page container" style="display: none;">
+        <h1>Aaaawww yallabii, my babbbyy, my sweetheart, my darling, ya rouhii, ya qalbii🥹🫂💗 Wallahi I'm more than happy to know this put a smile on your gorgeous gorgeous face babyyy... Alhamdulilah, May you always be smiling and happy fi dunya wal akhirah. I LOVE YOU SOO SOO SOO MUCH MY SWEETHEART</h1>
+    </div>
+
+    <!-- Forgive Page -->
+    <div id="forgivePage" class="page container" style="display: none;">
+        <h1>I’m soo soo soo sorry for constantly hurting you😢, Wallahi it is never my intention.. I promise to try and never hurt you🥹 I do things and say things without thinking😔😭 Pls forgive me my loveee🥹🥹🥹 I'll stop being ungrateful and be a better person and work on never ever hurting you babbyyy... I LOVE YOU TO THE POWER OF INFINITY YA ROUHIII🥹🥹💗💗 Pls accept my heartfelt apology🥹🥹</h1>
+        <button onclick="goToPage('thankYouPage')">I forgive you my loveee🥹🥹🥹</button>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankYouPage" class="page container" style="display: none;">
+        <h1>Thank you for accepting my apology ya rouhii🥹💗🫂🙈🙈🙈🙈 I'm happy you did and at least rn my heart is at ease🥹🫂Yaaayyyy🥰🥳🥳</h1>
+    </div>
+</body>
+</html>
